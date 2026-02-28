@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-charcoal-900: #1a1a1a;
+    --color-charcoal-800: #2d2d2d;
+    --color-gold: #c9a227;
+    --color-gold-light: #d4b84a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-charcoal-900 antialiased;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-18 md:py-24 lg:py-28;
+  }
+
+  .heading-display {
+    @apply font-display text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-charcoal-900 md:text-5xl lg:text-6xl;
+  }
+
+  .heading-section {
+    @apply font-display text-3xl font-semibold leading-[1.1] tracking-[-0.015em] text-charcoal-900 md:text-4xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-gold;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-charcoal-900 transition-all duration-300 ease-out;
+    box-shadow: 0 4px 0 0 rgba(168, 134, 31, 0.5), 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    @apply -translate-y-1 bg-gold-light;
+    box-shadow: 0 6px 0 0 rgba(168, 134, 31, 0.4), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center rounded-xl border-2 border-white/80 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  .btn-outline-light:hover,
+  .btn-outline-light:focus {
+    @apply -translate-y-1 border-white bg-white/15;
+    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center rounded-xl bg-charcoal-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 ease-out;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .btn-dark:hover,
+  .btn-dark:focus {
+    @apply -translate-y-1 bg-charcoal-800;
+    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.35), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-premium {
+    @apply overflow-hidden rounded-xl border border-charcoal-200 bg-white transition-all duration-300 ease-out;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  .card-premium:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-float-3d {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .btn-float-3d:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  .btn-float-3d-gold {
+    box-shadow: 0 4px 0 0 rgba(168, 134, 31, 0.5), 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .btn-float-3d-gold:hover {
+    box-shadow: 0 6px 0 0 rgba(168, 134, 31, 0.4), 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  .btn-float-3d-whatsapp {
+    box-shadow: 0 4px 0 0 rgba(0, 100, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .btn-float-3d-whatsapp:hover {
+    box-shadow: 0 6px 0 0 rgba(0, 100, 0, 0.35), 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Footer link hover */
+  footer a {
+    transition: color 0.25s ease;
+  }
+}
+
+/* Scroll-in animations: smooth on mobile and desktop */
+.scroll-animate-in {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate-in {
+    transition-property: transform, opacity;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Subtle animations - respect reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-3 {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-4 {
+    animation: fadeIn 0.8s ease-out 0.45s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hero background subtle zoom */
+  .hero-bg-zoom {
+    animation: heroZoom 20s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from {
+      transform: scale(1.05);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Nav link hover underline */
+  .nav-link-animate {
+    position: relative;
+  }
+  .nav-link-animate::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+  }
+  .nav-link-animate:hover::after,
+  .nav-link-animate:focus-visible::after {
+    width: 100%;
+  }
+
+  /* Stagger children (for lists) */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+}

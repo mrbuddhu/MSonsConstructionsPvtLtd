@@ -1,0 +1,86 @@
+export const services = [
+  {
+    id: 'bathroom',
+    title: 'Bathroom Renovations',
+    description: 'Full bathroom refurbishment, wet rooms, and quality fittings.',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
+    bullets: [
+      'Full bathroom refurbishment',
+      'Wet room installation',
+      'Quality fittings and tiling',
+      'Plumbing and waterproofing',
+    ],
+  },
+  {
+    id: 'kitchen',
+    title: 'Kitchen Installation',
+    description: 'Custom kitchen fitting and worktop installation.',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+    bullets: [
+      'Custom kitchen design and fitting',
+      'Worktop installation',
+      'Cabinet fitting and repairs',
+      'Plumbing and electrical coordination',
+    ],
+  },
+  {
+    id: 'tiling',
+    title: 'Tiling & Marble',
+    description: 'Wall and floor tiling with premium materials.',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80',
+    bullets: [
+      'Wall and floor tiling',
+      'Marble and natural stone',
+      'Mosaic and feature walls',
+      'Bathroom and kitchen splashbacks',
+    ],
+  },
+  {
+    id: 'flooring',
+    title: 'Flooring',
+    description: 'Laminate, vinyl, and solid wood flooring.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    bullets: [
+      'Laminate and vinyl flooring',
+      'Solid wood and engineered wood',
+      'Underfloor heating preparation',
+      'Skirting and finishing',
+    ],
+  },
+  {
+    id: 'painting',
+    title: 'Painting & Decorating',
+    description: 'Interior and exterior painting and finishing.',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+    bullets: [
+      'Interior and exterior painting',
+      'Wallpapering and feature walls',
+      'Preparation and finishing',
+      'Commercial and residential',
+    ],
+  },
+  {
+    id: 'roofing',
+    title: 'Roofing',
+    description: 'Roof repairs, flat roofs, and maintenance.',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80',
+    bullets: [
+      'Roof repairs and maintenance',
+      'Flat roof installation',
+      'Slate and tile roofing',
+      'Guttering and fascias',
+    ],
+  },
+  {
+    id: 'extensions',
+    title: 'Extensions & General Construction',
+    description: 'Home extensions, structural work, and building.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+    bullets: [
+      'Single and double storey extensions',
+      'Structural alterations',
+      'Loft conversions',
+      'General building and repairs',
+    ],
+  },
+] as const;
