@@ -25,7 +25,13 @@ npm run build
 npm start
 ```
 
-Deploy to [Vercel](https://vercel.com) by connecting the repo; no env vars required.
+Deploy to [Vercel](https://vercel.com): connect the repo, then:
+
+1. **Root Directory:** leave empty (or `.`) so the project root is the repo root.
+2. **Framework Preset:** should auto-detect as Next.js.
+3. No env vars required.
+
+If you see **404 NOT_FOUND** after deploy, check in Vercel → Project Settings → General that **Root Directory** is blank (repo root). If you imported from a monorepo or subfolder, set it back to the repo root.
 
 ## Project structure
 
