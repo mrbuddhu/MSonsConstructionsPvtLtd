@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { services } from '@/lib/services';
 import { ImageWithFallback } from '@/components/ImageWithFallback';
-import { AnimateIn } from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Services | M & Sons Construction Group LTD',
@@ -27,8 +26,8 @@ export default function ServicesPage() {
           <h2 id="services-list-heading" className="sr-only">Service list</h2>
           <div className="space-y-20">
             {services.map((service, index) => (
-              <AnimateIn key={service.id} variant={index % 2 === 0 ? 'left' : 'right'} delay={index * 40}>
               <article
+                key={service.id}
                 id={service.id}
                 className="grid gap-10 lg:grid-cols-2 lg:items-center"
               >
@@ -53,7 +52,6 @@ export default function ServicesPage() {
                   </ul>
                 </div>
               </article>
-              </AnimateIn>
             ))}
           </div>
         </div>

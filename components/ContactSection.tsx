@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, FormEvent } from 'react';
-import { AnimateIn } from './AnimateIn';
 
 export function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -24,22 +23,17 @@ export function ContactSection() {
   return (
     <section id="contact" className="section-padding bg-white" aria-labelledby="contact-heading">
       <div className="container-narrow">
-        <AnimateIn>
-          <div className="text-center">
-            <p className="eyebrow">Free quote</p>
-            <h2 id="contact-heading" className="heading-section mt-2">
-              Get in Touch
-            </h2>
-          </div>
-        </AnimateIn>
-        <AnimateIn delay={50}>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-charcoal-600">
-            Request a free quote or speak to our team. We serve London and surrounding areas.
-          </p>
-        </AnimateIn>
+        <div className="text-center">
+          <p className="eyebrow">Free quote</p>
+          <h2 id="contact-heading" className="heading-section mt-2">
+            Get in Touch
+          </h2>
+        </div>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-charcoal-600">
+          Request a free quote or speak to our team. We serve London and surrounding areas.
+        </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <AnimateIn delay={100} variant="right">
           <div>
             <div className="rounded-lg border border-charcoal-200 bg-charcoal-50 p-6">
               <h3 className="font-display text-lg font-semibold text-charcoal-900">
@@ -77,9 +71,7 @@ export function ContactSection() {
               />
             </div>
           </div>
-          </AnimateIn>
 
-          <AnimateIn delay={150} variant="left">
           <div>
             <form
               id="contact-form"
@@ -152,7 +144,6 @@ export function ContactSection() {
               </button>
             </form>
           </div>
-          </AnimateIn>
         </div>
       </div>
     </section>

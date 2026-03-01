@@ -11,7 +11,7 @@ export function Hero() {
         src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
         alt="Professional construction and building work"
         fill
-        className="object-cover opacity-40 hero-bg-zoom"
+        className="object-cover opacity-40"
         priority
         sizes="100vw"
       />

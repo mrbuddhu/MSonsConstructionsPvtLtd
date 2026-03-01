@@ -164,23 +164,10 @@
     }
   }
 
-  /* Hero background subtle zoom */
-  .hero-bg-zoom {
-    animation: heroZoom 20s ease-out forwards;
-  }
-
-  @keyframes heroZoom {
-    from {
-      transform: scale(1.05);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
   /* Nav link hover underline */
   .nav-link-animate {
     position: relative;
+    display: inline-block;
   }
   .nav-link-animate::after {
     content: '';
