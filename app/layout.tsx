@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     description:
       'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
     type: 'website',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'M & Sons Construction Group LTD' }],
+    images: [{ url: '/og-logo.png', width: 1200, height: 1200, alt: 'M & Sons Construction Group LTD logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'M & Sons Construction Group LTD | Trusted Builders in London',
     description:
       'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
-    images: ['/opengraph-image'],
+    images: ['/og-logo.png'],
   },
   robots: {
     index: true,
