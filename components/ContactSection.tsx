@@ -18,7 +18,7 @@ export function ContactSection() {
     const body = encodeURIComponent(
       `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
     );
-    window.location.href = `mailto:manaf.alfrouh@yahoo.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@construction-group.co.uk?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -32,7 +32,8 @@ export function ContactSection() {
         </AnimateIn>
         <AnimateIn delay={60}>
           <p className="mx-auto mt-4 max-w-2xl text-center text-charcoal-600">
-            Request a free quote or speak to our team. We serve London and surrounding areas.
+            If you are planning a building project or renovation, our team is ready to help. Get in touch today
+            for a free quote and professional advice.
           </p>
         </AnimateIn>
 
@@ -54,8 +55,8 @@ export function ContactSection() {
                 </p>
                 <p>
                   <strong>Email:</strong>{' '}
-                  <a href="mailto:manaf.alfrouh@yahoo.com" className="text-gold hover:underline focus:underline">
-                    manaf.alfrouh@yahoo.com
+                  <a href="mailto:info@construction-group.co.uk" className="text-gold hover:underline focus:underline">
+                    info@construction-group.co.uk
                   </a>
                 </p>
               </address>

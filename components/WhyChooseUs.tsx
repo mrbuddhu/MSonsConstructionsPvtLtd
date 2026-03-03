@@ -1,11 +1,11 @@
 import { AnimateIn } from './AnimateIn';
 
 const points = [
-  'Experienced and skilled builders',
-  'High-quality materials and workmanship',
-  'Professional and reliable service',
-  'Competitive pricing',
-  'Customer satisfaction guaranteed',
+  'Experienced and skilled construction team',
+  'High quality materials and workmanship',
+  'Reliable and professional service',
+  'Competitive and fair pricing',
+  'Fully committed to customer satisfaction',
 ];
 
 export function WhyChooseUs() {

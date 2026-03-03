@@ -20,26 +20,29 @@ export function AboutSection() {
           <AnimateIn delay={80} variant="left">
             <div>
               <h2 id="about-heading" className="heading-section">
-                About M & Sons Construction
+                M &amp; Sons – General Construction
               </h2>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-charcoal-500">
+                Trusted &#8226; Reliable &#8226; Quality
+              </p>
               <div className="mt-6 space-y-4 text-charcoal-600">
                 <p>
-                  M & Sons Construction Group LTD is a trusted construction company based in the UK,
-                  providing high-quality building services for residential and commercial projects.
+                  Welcome to M &amp; Sons Construction Group LTD, your trusted local specialists in construction,
+                  renovations, and property improvements. With years of experience in the building industry, we
+                  provide high-quality workmanship and reliable services for residential and commercial projects.
                 </p>
                 <p>
-                  We specialise in bathrooms and kitchens renovation, along with a wide range of
-                  general construction services. Our team focuses on delivering reliable workmanship,
-                  attention to detail, and professional results on every project.
+                  Our goal is simple — to deliver professional building services that combine quality, durability,
+                  and attention to detail. Whether you are planning a small home improvement or a complete
+                  renovation, our skilled team is here to help bring your vision to life.
+                </p>
+                <p className="font-display text-xl font-semibold text-charcoal-900">
+                  Our Mission
                 </p>
                 <p>
-                  With years of experience in the construction industry, we work closely with our
-                  clients to transform their ideas into reality. Whether it&apos;s a full renovation,
-                  extension, or small improvement project, we aim to provide durable, high-quality
-                  finishes and complete customer satisfaction.
-                </p>
-                <p className="font-semibold text-charcoal-900">
-                  Our goal is simple: Trusted • Reliable • Quality.
+                  At M &amp; Sons Construction Group LTD, we believe every project deserves the highest level of care
+                  and craftsmanship. Our mission is to provide dependable construction services while building
+                  long-term relationships with our clients based on trust and quality work.
                 </p>
               </div>
             </div>

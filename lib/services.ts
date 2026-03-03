@@ -129,4 +129,17 @@ export const services = [
       'Reliable, tidy workmanship',
     ],
   },
+  {
+    id: 'general-building',
+    title: 'General Building & Renovations',
+    description:
+      'From small repairs to full property refurbishments, we handle all aspects of general building, plastering, rendering and coordination with electrical work.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80',
+    bullets: [
+      'General building and structural work',
+      'Full property renovations',
+      'Plastering and rendering',
+      'Liaison with qualified electricians',
+    ],
+  },
 ] as const;

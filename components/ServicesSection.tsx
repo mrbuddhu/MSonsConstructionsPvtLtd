@@ -14,8 +14,21 @@ export function ServicesSection() {
           </h2>
         </AnimateIn>
         <AnimateIn delay={60}>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-charcoal-600">
-            From bathroom and kitchen renovations to extensions and general building—we deliver quality across London and surrounding areas.
+          <div className="mx-auto mt-4 max-w-3xl text-center text-charcoal-600">
+            <p>
+              At M &amp; Sons Construction Group LTD, we provide complete building and renovation services for
+              homes and commercial properties across London and surrounding areas.
+            </p>
+            <p className="mt-3">
+              Our team handles everything from small improvements to full property refurbishments with the same
+              focus on quality and reliability.
+            </p>
+          </div>
+        </AnimateIn>
+        <AnimateIn delay={100}>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-charcoal-700">
+            From general building, house extensions and roofing, to bathrooms, kitchens, flooring, underfloor heating,
+            plumbing, electrics and full property renovations — our team covers every aspect of your project.
           </p>
         </AnimateIn>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

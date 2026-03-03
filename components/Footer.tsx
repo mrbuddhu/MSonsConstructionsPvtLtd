@@ -32,8 +32,8 @@ export function Footer() {
                 </a>
               </p>
               <p>
-                <a href="mailto:manaf.alfrouh@yahoo.com" className="hover:text-gold focus:text-gold">
-                  manaf.alfrouh@yahoo.com
+                <a href="mailto:info@construction-group.co.uk" className="hover:text-gold focus:text-gold">
+                  info@construction-group.co.uk
                 </a>
               </p>
             </address>
@@ -42,6 +42,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Services</h4>
             <div className="mt-3 text-sm text-white/80">
               <ul className="space-y-1">
+                <li><Link href="/services#general-building" className="whitespace-nowrap hover:text-gold focus:text-gold">General Building &amp; Renovations</Link></li>
                 <li><Link href="/services#roofing" className="whitespace-nowrap hover:text-gold focus:text-gold">Roofing</Link></li>
                 <li><Link href="/services#extensions" className="whitespace-nowrap hover:text-gold focus:text-gold">Extensions</Link></li>
                 <li><Link href="/services#tiling" className="whitespace-nowrap hover:text-gold focus:text-gold">Tiling</Link></li>

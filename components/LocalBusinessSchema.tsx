@@ -12,7 +12,7 @@ export function LocalBusinessSchema() {
       addressCountry: 'GB',
     },
     telephone: '+447454704949',
-    email: 'manaf.alfrouh@yahoo.com',
+    email: 'info@construction-group.co.uk',
     url: 'https://msonsconstruction.co.uk',
     areaServed: {
       '@type': 'GeoCircle',
