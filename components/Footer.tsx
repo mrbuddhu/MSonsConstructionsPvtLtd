@@ -68,7 +68,19 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-charcoal-700 pt-8 text-center text-sm text-white/60">
-          <p>&copy; {currentYear} M & Sons Construction Group LTD. All rights reserved.</p>
+          <p>&copy; {currentYear} M &amp; Sons Construction Group LTD. All rights reserved.</p>
+          <p className="mt-1 text-xs text-white/50">
+            Crafted with ❤️ at{' '}
+            <a
+              href="https://sanganak.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-4 hover:text-gold hover:underline"
+            >
+              SanganakHQ
+            </a>
+            .
+          </p>
         </div>
       </div>
     </footer>
