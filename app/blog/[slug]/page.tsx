@@ -106,7 +106,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
 
       <section className="section-padding bg-white">
         <div className="container-narrow max-w-3xl">
-          <div className="prose prose-neutral max-w-none prose-headings:font-display prose-headings:text-charcoal-900">
+          <div className="space-y-6 text-base leading-relaxed text-charcoal-700">
             <p>
               Choosing the right construction company is one of the most important decisions you will make
               when planning a renovation, extension or full refurbishment in London. The right builder will
@@ -118,50 +118,62 @@ export default function BlogPostPage({ params }: { params: Params }) {
               more confident when comparing quotes.
             </p>
 
-            <h2>1. Check experience with similar projects</h2>
-            <p>
+            <h2 className="mt-10 font-display text-2xl font-semibold text-charcoal-900">
+              1. Check experience with similar projects
+            </h2>
+            <p className="mt-3">
               Look for a construction company that regularly works on the type of project you are planning –
               for example bathroom renovations, kitchen installations, house extensions or full property
               refurbishments. Ask to see recent photos or case studies of similar work.
             </p>
 
-            <h2>2. Make sure everything is clearly itemised</h2>
-            <p>
-              A professional quote should break down labour, materials and any extras in clear language. Be
-              wary of vague single-line prices. Itemised quotes help you understand exactly what is included
-              and make it easier to compare different builders fairly.
+            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+              2. Make sure everything is clearly itemised
+            </h2>
+            <p className="mt-3">
+              A professional quote should break down labour, materials and any extras in clear language. Be wary of
+              vague single-line prices. Itemised quotes help you understand exactly what is included and make it
+              easier to compare different builders fairly.
             </p>
 
-            <h2>3. Look for good communication</h2>
-            <p>
-              Good builders are also good communicators. Notice how quickly they respond to your messages,
-              how clearly they answer questions and whether they take time to explain options. This is a good
-              indication of how they will handle your project once work starts.
+            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+              3. Look for good communication
+            </h2>
+            <p className="mt-3">
+              Good builders are also good communicators. Notice how quickly they respond to your messages, how
+              clearly they answer questions and whether they take time to explain options. This is a good indication
+              of how they will handle your project once work starts.
             </p>
 
-            <h2>4. Understand the schedule and payment plan</h2>
-            <p>
+            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+              4. Understand the schedule and payment plan
+            </h2>
+            <p className="mt-3">
               Before you agree to anything, ask for a simple timeline showing when each stage of work will be
-              completed, and how payments are linked to progress. This keeps everyone on the same page and
-              helps avoid surprises later on.
+              completed, and how payments are linked to progress. This keeps everyone on the same page and helps
+              avoid surprises later on.
             </p>
 
-            <h2>5. Choose a team you feel comfortable with</h2>
-            <p>
+            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+              5. Choose a team you feel comfortable with
+            </h2>
+            <p className="mt-3">
               Construction work often means having people in your home for several days or weeks. It is worth
-              choosing a company that feels respectful, tidy and easy to deal with – not just the cheapest
-              price on paper.
+              choosing a company that feels respectful, tidy and easy to deal with – not just the cheapest price on
+              paper.
             </p>
 
-            <h2>Thinking about a project in London?</h2>
-            <p>
+            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+              Thinking about a project in London?
+            </h2>
+            <p className="mt-3">
               M &amp; Sons Construction Group LTD provides bathroom renovations, kitchen installation, roofing,
-              tiling, flooring, general building, underfloor heating, plumbing and full property renovations
-              across London and surrounding areas.
+              tiling, flooring, general building, underfloor heating, plumbing and full property renovations across
+              London and surrounding areas.
             </p>
             <p>
-              If you would like friendly, no-obligation advice about your project, get in touch and we&apos;ll
-              be happy to help.
+              If you would like friendly, no-obligation advice about your project, get in touch and we&apos;ll be
+              happy to help.
             </p>
           </div>
 
