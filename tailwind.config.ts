@@ -22,9 +22,9 @@ const config: Config = {
           600: '#4a4a4a',
         },
         gold: {
-          DEFAULT: '#c9a227',
-          light: '#d4b84a',
-          dark: '#a8861f',
+          DEFAULT: '#f4c542',
+          light: '#f8d35f',
+          dark: '#d3a52f',
         },
       },
       fontFamily: {

@@ -7,7 +7,7 @@ export function AboutSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-charcoal-100">
             <Image
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
+              src="https://images.unsplash.com/photo-KoTUF0mdHLw?w=1200&q=80"
               alt="Construction team at work"
               fill
               className="object-cover transition-transform duration-500 hover:scale-[1.02]"

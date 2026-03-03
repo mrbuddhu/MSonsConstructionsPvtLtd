@@ -82,7 +82,7 @@ export const services = [
     title: 'Flooring',
     description:
       'We install different types of flooring including laminate, hardwood, tiles, and vinyl flooring with precision and durability.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-W2NY_EMj4HA?w=1200&q=80',
     bullets: [
       'Laminate and vinyl flooring',
       'Hardwood and engineered wood',
@@ -108,7 +108,7 @@ export const services = [
     title: 'Underfloor Heating',
     description:
       'We install efficient underfloor heating systems that provide comfortable and energy-efficient heating for your home.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-2GXod3GojXc?w=1200&q=80',
     bullets: [
       'Electric and water-based systems',
       'Ideal for bathrooms and kitchens',
@@ -121,7 +121,7 @@ export const services = [
     title: 'Plumbing',
     description:
       'Plumbing services for installations, upgrades, and repairs—ideal for bathrooms, kitchens, and general property maintenance.',
-    image: 'https://images.unsplash.com/photo-1581578017093-174f5bd9a8f0?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-hoIQtR0NoQE?w=1200&q=80',
     bullets: [
       'New pipework and upgrades',
       'Leak detection and repairs',

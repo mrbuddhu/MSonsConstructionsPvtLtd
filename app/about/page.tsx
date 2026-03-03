@@ -13,7 +13,7 @@ export default function AboutPage() {
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0 bg-charcoal-900">
           <Image
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80"
+            src="https://images.unsplash.com/photo-KoTUF0mdHLw?w=1920&q=80"
             alt=""
             fill
             className="object-cover opacity-50"
