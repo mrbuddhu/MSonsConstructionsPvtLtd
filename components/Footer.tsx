@@ -40,12 +40,22 @@ export function Footer() {
           </div>
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Services</h4>
-            <ul className="mt-3 space-y-1 text-sm text-white/80">
-              <li><Link href="/services#bathroom" className="hover:text-gold focus:text-gold">Bathroom Renovations</Link></li>
-              <li><Link href="/services#kitchen" className="hover:text-gold focus:text-gold">Kitchen Installation</Link></li>
-              <li><Link href="/services#tiling" className="hover:text-gold focus:text-gold">Tiling & Marble</Link></li>
-              <li><Link href="/services#extensions" className="hover:text-gold focus:text-gold">Extensions</Link></li>
-            </ul>
+            <div className="mt-3 grid grid-cols-1 gap-x-8 gap-y-1 text-sm text-white/80 sm:grid-cols-2">
+              <ul className="space-y-1">
+                <li><Link href="/services#roofing" className="hover:text-gold focus:text-gold">Roofing</Link></li>
+                <li><Link href="/services#extensions" className="hover:text-gold focus:text-gold">Extensions</Link></li>
+                <li><Link href="/services#tiling" className="hover:text-gold focus:text-gold">Tiling</Link></li>
+                <li><Link href="/services#bathroom-installation" className="hover:text-gold focus:text-gold">Bathroom Installation</Link></li>
+                <li><Link href="/services#kitchen" className="hover:text-gold focus:text-gold">Kitchen Installation</Link></li>
+              </ul>
+              <ul className="space-y-1">
+                <li><Link href="/services#painting" className="hover:text-gold focus:text-gold">Painting & Decorating</Link></li>
+                <li><Link href="/services#flooring" className="hover:text-gold focus:text-gold">Flooring</Link></li>
+                <li><Link href="/services#bathroom-renovation" className="hover:text-gold focus:text-gold">Bathroom Renovation</Link></li>
+                <li><Link href="/services#underfloor-heating" className="hover:text-gold focus:text-gold">Underfloor Heating</Link></li>
+                <li><Link href="/services#plumbing" className="hover:text-gold focus:text-gold">Plumbing</Link></li>
+              </ul>
+            </div>
           </div>
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Quick Links</h4>
