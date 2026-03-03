@@ -13,8 +13,8 @@ export default function AboutPage() {
       <section className="relative py-20 md:py-28">
         <div className="absolute inset-0 bg-charcoal-900">
           <Image
-            src="https://images.unsplash.com/photo-KoTUF0mdHLw?w=1920&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80"
+            alt="Builders working on a modern house extension"
             fill
             className="object-cover opacity-50"
             sizes="100vw"

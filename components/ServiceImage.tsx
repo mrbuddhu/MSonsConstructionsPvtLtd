@@ -25,8 +25,11 @@ export function ServiceImage({ src, alt, title }: Props) {
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         onError={() => setImgSrc(FALLBACK)}
       />
-      <div className="absolute inset-0 bg-charcoal-900/30" aria-hidden />
-      <h3 className="absolute bottom-0 left-0 right-0 p-4 font-display text-lg font-semibold text-white">
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-charcoal-900/40 to-transparent"
+        aria-hidden
+      />
+      <h3 className="absolute inset-x-0 bottom-0 p-4 font-display text-lg md:text-xl font-semibold text-white tracking-tight">
         {title}
       </h3>
     </div>

@@ -8,8 +8,8 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       <Image
-        src="https://images.unsplash.com/photo-ZQmJ9Lz3K1I?w=1920&q=80"
-        alt="Professional construction and building work"
+        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80"
+        alt="Modern house exterior with new roofing"
         fill
         className="object-cover opacity-40"
         priority
