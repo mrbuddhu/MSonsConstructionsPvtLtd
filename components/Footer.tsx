@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-charcoal-800/20 bg-charcoal-900 text-white" role="contentinfo">
       <div className="container-narrow section-padding">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-12 lg:items-start">
-          <div className="space-y-3 lg:col-span-4">
+          <div className="space-y-3 lg:col-span-3">
             <div className="flex items-center gap-3">
               <Image
                 src="/logo.png"
@@ -55,8 +55,8 @@ export function Footer() {
               </ul>
             </div>
           </div>
-          <div className="space-y-3 lg:col-span-1">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Quick Links</h4>
+          <div className="space-y-3 lg:col-span-2">
+            <h4 className="whitespace-nowrap text-sm font-semibold uppercase tracking-wider text-white/90">Quick Links</h4>
             <ul className="mt-3 space-y-1 text-sm text-white/80">
               <li><Link href="/" className="hover:text-gold focus:text-gold">Home</Link></li>
               <li><Link href="/about" className="hover:text-gold focus:text-gold">About</Link></li>
