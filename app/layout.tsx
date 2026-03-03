@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     title: 'M & Sons Construction Group LTD | Trusted Builders in London',
     description:
       'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
