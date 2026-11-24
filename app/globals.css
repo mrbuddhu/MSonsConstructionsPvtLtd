@@ -316,23 +316,23 @@ html.lenis body {
   transform: none;
 }
 
-/* Clip reveal for media: a shutter opening upward */
+/* Clip reveal for media: a shutter opening upward. The observed wrapper is
+   never clipped itself (a fully clipped target never reports intersecting);
+   the clip lives on its first child. */
 .motion [data-reveal='clip'] {
   opacity: 1;
   transform: none;
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 1.4s var(--ease-inout);
-  transition-delay: var(--d, 0ms);
 }
 .motion [data-reveal='clip'] > * {
+  clip-path: inset(100% 0 0 0);
   transform: scale(1.25);
-  transition: transform 1.8s var(--ease-out);
+  transition:
+    clip-path 1.4s var(--ease-inout),
+    transform 1.8s var(--ease-out);
   transition-delay: var(--d, 0ms);
 }
-.motion [data-reveal='clip'].is-in {
-  clip-path: inset(0 0 0 0);
-}
 .motion [data-reveal='clip'].is-in > * {
+  clip-path: inset(0 0 0 0);
   transform: scale(1);
 }
 
