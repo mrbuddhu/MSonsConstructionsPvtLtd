@@ -251,7 +251,7 @@ export function createBuildScene(canvas: HTMLCanvasElement, opts: { mobile: bool
   const load = new Mesh(new BoxGeometry(SX, BEAM, BEAM * 0.8), steelDark);
   trolley.add(load);
 
-  crane.position.set(x0 + W + 6.5, 0, 3.2);
+  crane.position.set(x0 + W + 4.5, 0, z0 - 5);
   scene.add(crane);
 
   // ---- State ------------------------------------------------------------
@@ -266,7 +266,6 @@ export function createBuildScene(canvas: HTMLCanvasElement, opts: { mobile: bool
   let width = 1;
   let height = 1;
   const lookAt = new Vector3();
-  const t0 = performance.now();
 
   function applyBuild(b: number) {
     const t = b * FLOORS;
@@ -288,16 +287,15 @@ export function createBuildScene(canvas: HTMLCanvasElement, opts: { mobile: bool
     ghostMat.opacity = 0.34 - b * 0.2;
   }
 
-  function frame(now: number) {
+  function frame() {
     raf = requestAnimationFrame(frame);
     current += (target - current) * 0.09;
     cpx += (px - cpx) * 0.05;
     cpy += (py - cpy) * 0.05;
     applyBuild(current);
 
-    const time = (now - t0) / 1000;
     // Crane slews with progress and breathes a little on its own.
-    slew.rotation.y = -0.15 + current * 0.9 + Math.sin(time * 0.35) * 0.08;
+    slew.rotation.y = -0.15 + current * 0.9;
     const reach = 4 + (1 - ((current * FLOORS) % 1)) * 6;
     trolley.position.x = -reach;
     const topY = Math.min(current * FLOORS + 1, FLOORS) * FH;
@@ -305,7 +303,6 @@ export function createBuildScene(canvas: HTMLCanvasElement, opts: { mobile: bool
     trolley.position.y = 0;
     cable.scale.y = drop;
     load.position.y = -drop;
-    load.rotation.y = Math.sin(time * 0.8) * 0.25;
 
     const angle = -0.75 + current * 1.05 + cpx * 0.12;
     const radius = mobile ? 58 : 37;

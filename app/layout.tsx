@@ -7,7 +7,6 @@ import { WhatsAppFloat } from '@/components/WhatsAppFloat';
 import { MobileCtaBar } from '@/components/MobileCtaBar';
 import { LocalBusinessSchema } from '@/components/LocalBusinessSchema';
 import { MotionRoot } from '@/components/motion/MotionRoot';
-import { Cursor } from '@/components/motion/Cursor';
 
 const sans = Archivo({
   subsets: ['latin'],
@@ -23,12 +22,15 @@ const mono = JetBrains_Mono({
   display: 'swap',
 });
 
+const SITE_URL = 'https://www.construction-group.co.uk';
+const IS_CONCEPT_PREVIEW = (process.env.VERCEL_PROJECT_PRODUCTION_URL ?? '').includes('msons-concept');
+
 export const viewport: Viewport = {
   themeColor: '#121211',
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://msonsconstruction.co.uk'),
+  metadataBase: new URL(SITE_URL),
   title: 'M & Sons Construction Group LTD | Trusted Builders in London',
   description:
     'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
@@ -47,22 +49,17 @@ export const metadata: Metadata = {
     description:
       'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
     type: 'website',
-    images: [{ url: '/og-logo.png', width: 1200, height: 1200, alt: 'M & Sons Construction Group LTD logo' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'M & Sons Construction Group LTD | Trusted Builders in London',
     description:
       'Professional construction company in London specialising in bathroom renovations, kitchen installations, roofing, tiling, flooring and general building services.',
-    images: ['/og-logo.png'],
   },
-  robots: {
-    // Concept preview: keep it out of search so it never competes with the live site.
-    index: false,
-    follow: false,
-  },
+  // The concept preview project stays out of search; the live site is indexed.
+  robots: IS_CONCEPT_PREVIEW ? { index: false, follow: false } : { index: true, follow: true },
   alternates: {
-    canonical: 'https://msonsconstruction.co.uk',
+    canonical: '/',
   },
 };
 
@@ -96,7 +93,6 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
         <MobileCtaBar />
-        <Cursor />
       </body>
     </html>
   );

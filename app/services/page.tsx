@@ -21,7 +21,7 @@ export default function ServicesPage() {
         </p>
       </PageHero>
 
-      <section className="grid-paper" aria-labelledby="services-list-heading">
+      <section className="bg-paper" aria-labelledby="services-list-heading">
         <h2 id="services-list-heading" className="sr-only">
           Service list
         </h2>
@@ -34,7 +34,7 @@ export default function ServicesPage() {
             >
               <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2 lg:col-start-6' : ''}`}>
                 <div className="crop text-ink/40">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-concrete-800" data-reveal="clip" data-cursor="view">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-concrete-800" data-reveal="clip">
                     <div className="absolute inset-0">
                       <Parallax amount={12}>
                         <ImageWithFallback

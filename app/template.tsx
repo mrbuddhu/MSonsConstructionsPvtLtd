@@ -1,9 +1,4 @@
-// Re-mounts on every navigation: a brass curtain lifts off the new page.
+// Re-mounts on every navigation: the new page fades and rises in once.
 export default function Template({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <div className="curtain" aria-hidden />
-      <div className="page-in">{children}</div>
-    </>
-  );
+  return <div className="page-in">{children}</div>;
 }

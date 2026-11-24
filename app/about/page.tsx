@@ -29,7 +29,7 @@ export default function AboutPage() {
         <p>Trusted builders serving London and surrounding areas</p>
       </PageHero>
 
-      <section className="section-padding grid-paper">
+      <section className="section-padding bg-paper">
         <div className="shell">
           <h2 className="sr-only">Our story and values</h2>
           <div className="grid gap-12 lg:grid-cols-12">

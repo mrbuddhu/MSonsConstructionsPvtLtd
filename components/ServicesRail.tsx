@@ -39,7 +39,6 @@ export function ServicesRail({ children, count }: { children: ReactNode; count: 
       const measure = () => Math.max(0, track.scrollWidth - window.innerWidth);
       let distance = measure();
       wrap.style.height = `${distance + window.innerHeight}px`;
-      const imgs = Array.from(track.querySelectorAll<HTMLElement>('.rail-img'));
 
       const st = ScrollTrigger.create({
         trigger: wrap,
@@ -57,13 +56,6 @@ export function ServicesRail({ children, count }: { children: ReactNode; count: 
           if (numRef.current) {
             const n = Math.min(count, Math.max(1, Math.round(self.progress * (count - 1)) + 1));
             numRef.current.textContent = String(n).padStart(2, '0');
-          }
-          // Each image drifts against the track for depth.
-          const vw = window.innerWidth;
-          for (const img of imgs) {
-            const r = img.parentElement!.getBoundingClientRect();
-            const c = (r.left + r.width / 2 - vw / 2) / vw;
-            img.style.transform = `translate3d(${c * -6}%,0,0)`;
           }
         },
       });

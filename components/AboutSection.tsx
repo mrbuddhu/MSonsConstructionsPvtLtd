@@ -4,7 +4,7 @@ import { Parallax } from './motion/Parallax';
 
 export function AboutSection() {
   return (
-    <section id="about" className="section-padding grid-paper relative" aria-labelledby="about-heading">
+    <section id="about" className="section-padding relative bg-paper" aria-labelledby="about-heading">
       <div className="shell">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6 lg:pr-6">
@@ -12,7 +12,7 @@ export function AboutSection() {
               <div
                 className="relative aspect-[4/5] overflow-hidden bg-concrete-800 sm:aspect-[4/3] lg:aspect-[4/5]"
                 data-reveal="clip"
-                data-cursor="view"
+               
               >
                 <div className="absolute inset-0">
                   <Parallax amount={14}>

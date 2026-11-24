@@ -20,8 +20,7 @@ function canAnimate() {
 
 /**
  * Global motion layer: Lenis smooth scrolling synced to the GSAP ticker,
- * a single IntersectionObserver for every [data-reveal] / .split element,
- * and a hairline scroll-progress rule.
+ * and a single IntersectionObserver for every [data-reveal] / .split element.
  */
 export function MotionRoot() {
   const pathname = usePathname();
@@ -47,28 +46,6 @@ export function MotionRoot() {
       gsap.ticker.remove(tick);
       lenis.destroy();
       window.__lenis = undefined;
-    };
-  }, []);
-
-  // Scroll progress rule.
-  useEffect(() => {
-    const bar = document.getElementById('scroll-progress');
-    if (!bar) return;
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const p = max > 0 ? window.scrollY / max : 0;
-      bar.style.transform = `scaleX(${p})`;
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    update();
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -110,11 +87,5 @@ export function MotionRoot() {
     };
   }, [pathname]);
 
-  return (
-    <div
-      id="scroll-progress"
-      aria-hidden
-      className="pointer-events-none fixed inset-x-0 top-0 z-[70] h-[2px] origin-left scale-x-0 bg-gold"
-    />
-  );
+  return null;
 }

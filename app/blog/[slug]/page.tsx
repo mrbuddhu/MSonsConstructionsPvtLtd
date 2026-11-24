@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const title = `${post.title} | M & Sons Construction Group LTD`;
   const description = post.excerpt;
 
-  const url = `https://msonsconstruction.co.uk/blog/${post.slug}`;
+  const url = `https://www.construction-group.co.uk/blog/${post.slug}`;
 
   return {
     title,
@@ -74,7 +74,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
       name: 'M & Sons Construction Group LTD',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://msonsconstruction.co.uk/opengraph-image',
+        url: 'https://www.construction-group.co.uk/icon.png',
       },
     },
   };

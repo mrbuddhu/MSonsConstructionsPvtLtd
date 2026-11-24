@@ -7,8 +7,8 @@ type Service = (typeof services)[number];
 export function ServiceCard({ service, index, total }: { service: Service; index: number; total: number }) {
   return (
     <article id={service.id} className="rail-card group flex shrink-0 flex-col" data-card>
-      <div className="relative aspect-[4/3] overflow-hidden bg-concrete-800" data-cursor="view">
-        <div className="rail-img absolute inset-[-6%] transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-concrete-800">
+        <div className="absolute inset-0">
           <ImageWithFallback
             src={service.image}
             alt={service.title}

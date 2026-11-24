@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Split } from './motion/Split';
+import { Magnetic } from './motion/Magnetic';
 
 const FLOORS_DESKTOP = 7;
 const FLOORS_MOBILE = 5;
@@ -70,6 +71,7 @@ export function Hero() {
           const reveal = Math.min(1, Math.max(0, (p - 0.6) / 0.32));
           section.style.setProperty('--r', reveal.toFixed(4));
           section.style.setProperty('--b', scrollBuild.toFixed(4));
+          section.style.setProperty('--p', p.toFixed(4));
           push();
           const level = Math.max(1, Math.min(nFloors, Math.ceil(Math.max(intro.v, scrollBuild) * nFloors)));
           if (level !== lastLevel && counterRef.current) {
@@ -156,7 +158,7 @@ export function Hero() {
         </div>
 
         {/* Copy */}
-        <div className="shell relative z-10 flex h-full flex-col justify-end pb-[calc(3.75rem+max(1.75rem,4vh))] pt-24 md:pb-[max(2.5rem,7vh)] md:pt-28">
+        <div className="shell relative z-10 flex h-full flex-col justify-end pb-[calc(3.75rem+max(1.75rem,4vh))] pt-24 md:pb-[max(4.5rem,9vh)] md:pt-28">
           <p className="eyebrow text-gold auto-in" data-reveal="fade" style={{ ['--d' as string]: '500ms' }}>
             London &amp; surrounding areas
           </p>
@@ -165,6 +167,7 @@ export function Hero() {
             id="hero-heading"
             text="Trusted Construction & Renovation Experts in London"
             delay={650}
+            accent="&"
             className="auto-in type-display mt-5 max-w-[13ch] text-[clamp(3.1rem,8.2vw,9rem)] text-paper md:max-w-[15ch]"
           />
           <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
@@ -176,19 +179,40 @@ export function Hero() {
               High-quality building services for residential and commercial projects.
             </p>
             <div className="flex flex-wrap gap-3 auto-in" data-cta-zone data-reveal style={{ ['--d' as string]: '1350ms' }}>
-              <Link href="/#contact" className="btn-primary">
-                Get Free Quote <span className="arrow" aria-hidden>→</span>
-              </Link>
-              <a href="tel:+447454704949" className="btn-outline-light">
-                Call Now
-              </a>
+              <Magnetic>
+                <Link href="/#contact" className="btn-primary">
+                  Get Free Quote <span className="arrow" aria-hidden>→</span>
+                </Link>
+              </Magnetic>
+              <Magnetic>
+                <a href="tel:+447454704949" className="btn-outline-light">
+                  Call Now
+                </a>
+              </Magnetic>
             </div>
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div aria-hidden className="hero-cue pointer-events-none absolute bottom-0 left-1/2 hidden h-16 w-px -translate-x-1/2 overflow-hidden bg-paper/15 md:block">
-          <span className="block h-1/2 w-full bg-gold" />
+        {/* Drawing-sheet frame: drafted border, grid references, and a tape
+            measure along the bottom whose brass marker tracks the build. */}
+        <div aria-hidden className="sheet pointer-events-none absolute inset-2.5 z-[5] md:inset-5">
+          <span className="sheet-line sheet-top" />
+          <span className="sheet-line sheet-right" />
+          <span className="sheet-line sheet-bottom" />
+          <span className="sheet-line sheet-left" />
+          <span className="sheet-corner sheet-tl" />
+          <span className="sheet-corner sheet-tr" />
+          <span className="sheet-corner sheet-bl" />
+          <span className="sheet-corner sheet-br" />
+          <div className="sheet-tape hidden md:block">
+            <div className="sheet-tape-ticks" />
+            <div className="sheet-refs-x">
+              {['A', 'B', 'C', 'D', 'E', 'F'].map((l) => (
+                <span key={l}>{l}</span>
+              ))}
+            </div>
+            <span className="sheet-marker" />
+          </div>
         </div>
       </div>
     </section>

@@ -19,16 +19,16 @@ export default function BlogIndexPage() {
         <p>Simple, down-to-earth advice to help you plan your building and renovation projects with confidence.</p>
       </PageHero>
 
-      <section className="section-padding grid-paper">
+      <section className="section-padding bg-paper">
         <div className="shell">
           <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:items-start">
             <article className="group overflow-hidden border border-ink/15 bg-paper-50" data-reveal>
-              <div className="relative aspect-[16/9] overflow-hidden bg-concrete-800" data-cursor="view">
+              <div className="relative aspect-[16/9] overflow-hidden bg-concrete-800">
                 <Image
                   src={firstPost.heroImage}
                   alt={firstPost.heroAlt}
                   fill
-                  className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 66vw"
                 />
               </div>

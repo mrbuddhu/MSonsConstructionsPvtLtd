@@ -26,7 +26,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-padding grid-paper" aria-labelledby="contact-heading">
+    <section id="contact" className="section-padding bg-paper" aria-labelledby="contact-heading">
       <div className="shell">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -44,7 +44,7 @@ export function ContactSection() {
         <div className="mt-16 h-px bg-ink/25" data-reveal="rule" />
 
         <div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5" data-reveal="left">
+          <div className="lg:col-span-5" data-reveal>
             <div className="bg-ink p-7 text-paper md:p-9">
               <h3 className="heading-sub text-2xl md:text-3xl">M & Sons Construction Group LTD</h3>
               <address className="mt-8 grid gap-6 not-italic sm:grid-cols-2 lg:grid-cols-1">
@@ -87,7 +87,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 lg:col-start-7" data-reveal="right">
+          <div className="lg:col-span-6 lg:col-start-7" data-reveal>
             <form
               id="contact-form"
               ref={formRef}

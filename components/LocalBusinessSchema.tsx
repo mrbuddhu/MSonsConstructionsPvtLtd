@@ -3,7 +3,7 @@ export function LocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'M & Sons Construction Group LTD',
-    image: 'https://msonsconstruction.co.uk/og-image.jpg',
+    image: 'https://www.construction-group.co.uk/opengraph-image.png',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '86 Bedford Avenue',
@@ -13,7 +13,7 @@ export function LocalBusinessSchema() {
     },
     telephone: '+447454704949',
     email: 'info@construction-group.co.uk',
-    url: 'https://msonsconstruction.co.uk',
+    url: 'https://www.construction-group.co.uk',
     areaServed: {
       '@type': 'GeoCircle',
       geoMidpoint: {
