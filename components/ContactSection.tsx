@@ -45,8 +45,8 @@ export function ContactSection() {
                 M & Sons Construction Group LTD
               </h3>
               <address className="mt-4 not-italic text-charcoal-600">
-                <p>99A Woodstock Gardens</p>
-                <p>Hayes, UB4 8BA</p>
+                <p>86 Bedford Avenue</p>
+                <p>London, UB4 0DS</p>
                 <p className="mt-3">
                   <strong>Phone:</strong>{' '}
                   <a href="tel:+447454704949" className="text-gold hover:underline focus:underline">
@@ -64,8 +64,8 @@ export function ContactSection() {
 
             <div className="mt-6 aspect-video overflow-hidden rounded-lg border border-charcoal-200">
               <iframe
-                title="Map showing M & Sons Construction location in Hayes UB4 8BA"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19865!2d-0.421389!3d51.503396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876722e1e2f3b0f%3A0x0!2sHayes%2C%20UB4%208BA%2C%20UK!5e0!3m2!1sen!2suk"
+                title="Map showing M & Sons Construction location at 86 Bedford Avenue, UB4 0DS"
+                src="https://www.google.com/maps?q=86+Bedford+Avenue,+London+UB4+0DS&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -6,9 +6,9 @@ export function LocalBusinessSchema() {
     image: 'https://msonsconstruction.co.uk/og-image.jpg',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '99A Woodstock Gardens',
-      addressLocality: 'Hayes',
-      postalCode: 'UB4 8BA',
+      streetAddress: '86 Bedford Avenue',
+      addressLocality: 'London',
+      postalCode: 'UB4 0DS',
       addressCountry: 'GB',
     },
     telephone: '+447454704949',

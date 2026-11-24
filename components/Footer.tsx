@@ -24,8 +24,8 @@ export function Footer() {
           <div className="space-y-3 lg:col-span-3">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Contact</h4>
             <address className="mt-3 not-italic text-sm text-white/80">
-              <p>99A Woodstock Gardens</p>
-              <p>Hayes, UB4 8BA</p>
+              <p>86 Bedford Avenue</p>
+              <p>London, UB4 0DS</p>
               <p className="mt-2">
                 <a href="tel:+447454704949" className="hover:text-gold focus:text-gold">
                   07454 704949
