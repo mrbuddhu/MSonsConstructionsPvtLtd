@@ -49,8 +49,8 @@ export function ContactSection() {
               <h3 className="heading-sub text-2xl md:text-3xl">M & Sons Construction Group LTD</h3>
               <address className="mt-8 grid gap-6 not-italic sm:grid-cols-2 lg:grid-cols-1">
                 <div>
-                  <p className="text-paper/85">99A Woodstock Gardens</p>
-                  <p className="text-paper/85">Hayes, UB4 8BA</p>
+                  <p className="text-paper/85">86 Bedford Avenue</p>
+                  <p className="text-paper/85">London, UB4 0DS</p>
                 </div>
                 <div className="space-y-1">
                   <p>
@@ -72,8 +72,8 @@ export function ContactSection() {
             <div className="crop mt-8 text-ink/50">
               <div className="map-frame aspect-[4/3] overflow-hidden border border-ink/20 bg-paper-200">
                 <iframe
-                  title="Map showing M & Sons Construction location in Hayes UB4 8BA"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19865!2d-0.421389!3d51.503396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876722e1e2f3b0f%3A0x0!2sHayes%2C%20UB4%208BA%2C%20UK!5e0!3m2!1sen!2suk"
+                  title="Map showing M & Sons Construction location at 86 Bedford Avenue, UB4 0DS"
+                  src="https://www.google.com/maps?q=86+Bedford+Avenue,+London+UB4+0DS&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
