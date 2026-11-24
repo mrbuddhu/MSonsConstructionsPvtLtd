@@ -3,80 +3,97 @@ import Image from 'next/image';
 
 const currentYear = new Date().getFullYear();
 
+const serviceLinks = [
+  ['general-building', 'General Building & Renovations'],
+  ['roofing', 'Roofing'],
+  ['extensions', 'Extensions'],
+  ['tiling', 'Tiling'],
+  ['bathroom-installation', 'Bathroom Installation'],
+  ['kitchen', 'Kitchen Installation'],
+  ['painting', 'Painting & Decorating'],
+  ['flooring', 'Flooring'],
+  ['bathroom-renovation', 'Bathroom Renovation'],
+  ['underfloor-heating', 'Underfloor Heating'],
+  ['plumbing', 'Plumbing'],
+] as const;
+
+const quickLinks = [
+  ['/', 'Home'],
+  ['/about', 'About'],
+  ['/services', 'Services'],
+  ['/blog', 'Blog'],
+  ['/contact', 'Contact'],
+] as const;
+
 export function Footer() {
   return (
-    <footer className="border-t border-charcoal-800/20 bg-charcoal-900 text-white" role="contentinfo">
-      <div className="container-narrow section-padding">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-12 lg:items-start">
-          <div className="space-y-3 lg:col-span-3">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/logo.png"
-                alt="M & Sons Construction Group LTD logo"
-                width={260}
-                height={90}
-                className="h-28 md:h-32 w-auto"
-              />
-            </div>
-            <h3 className="mt-3 font-display text-lg font-semibold text-gold">M & Sons Construction Group LTD</h3>
-            <p className="mt-2 text-sm text-white/80">Trusted builders in London & surrounding areas.</p>
+    <footer className="relative overflow-hidden bg-ink text-paper" role="contentinfo">
+      <div className="shell pt-[clamp(4rem,9vw,7rem)]">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-10">
+          <div className="lg:col-span-3">
+            <Image
+              src="/logo.png"
+              alt="M & Sons Construction Group LTD logo"
+              width={260}
+              height={260}
+              className="-ml-4 h-36 w-auto md:h-40"
+            />
+            <p className="mt-2 max-w-xs text-sm text-paper/65">Trusted builders in London & surrounding areas.</p>
           </div>
-          <div className="space-y-3 lg:col-span-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Contact</h4>
-            <address className="mt-3 not-italic text-sm text-white/80">
+          <div className="lg:col-span-3">
+            <h4 className="mono text-paper/45">Contact</h4>
+            <address className="mt-5 space-y-1 not-italic text-paper/85">
               <p>86 Bedford Avenue</p>
               <p>London, UB4 0DS</p>
-              <p className="mt-2">
-                <a href="tel:+447454704949" className="hover:text-gold focus:text-gold">
+              <p className="pt-4">
+                <a href="tel:+447454704949" className="link-line hover:text-gold focus:text-gold">
                   07454 704949
                 </a>
               </p>
               <p>
-                <a href="mailto:info@construction-group.co.uk" className="hover:text-gold focus:text-gold">
+                <a href="mailto:info@construction-group.co.uk" className="link-line break-all hover:text-gold focus:text-gold">
                   info@construction-group.co.uk
                 </a>
               </p>
             </address>
           </div>
-          <div className="space-y-3 lg:col-span-4 lg:border-l lg:border-charcoal-800/50 lg:pl-8">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/90">Services</h4>
-            <div className="mt-3 text-sm text-white/80">
-              <ul className="space-y-1">
-                <li><Link href="/services#general-building" className="whitespace-nowrap hover:text-gold focus:text-gold">General Building &amp; Renovations</Link></li>
-                <li><Link href="/services#roofing" className="whitespace-nowrap hover:text-gold focus:text-gold">Roofing</Link></li>
-                <li><Link href="/services#extensions" className="whitespace-nowrap hover:text-gold focus:text-gold">Extensions</Link></li>
-                <li><Link href="/services#tiling" className="whitespace-nowrap hover:text-gold focus:text-gold">Tiling</Link></li>
-                <li><Link href="/services#bathroom-installation" className="whitespace-nowrap hover:text-gold focus:text-gold">Bathroom Installation</Link></li>
-                <li><Link href="/services#kitchen" className="whitespace-nowrap hover:text-gold focus:text-gold">Kitchen Installation</Link></li>
-                <li><Link href="/services#painting" className="whitespace-nowrap hover:text-gold focus:text-gold">Painting &amp; Decorating</Link></li>
-                <li><Link href="/services#flooring" className="whitespace-nowrap hover:text-gold focus:text-gold">Flooring</Link></li>
-                <li><Link href="/services#bathroom-renovation" className="whitespace-nowrap hover:text-gold focus:text-gold">Bathroom Renovation</Link></li>
-                <li><Link href="/services#underfloor-heating" className="whitespace-nowrap hover:text-gold focus:text-gold">Underfloor Heating</Link></li>
-                <li><Link href="/services#plumbing" className="whitespace-nowrap hover:text-gold focus:text-gold">Plumbing</Link></li>
-              </ul>
-            </div>
+          <div className="lg:col-span-4">
+            <h4 className="mono text-paper/45">Services</h4>
+            <ul className="mt-5 grid gap-x-6 gap-y-1.5 text-sm text-paper/80 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {serviceLinks.map(([id, label]) => (
+                <li key={id}>
+                  <Link href={`/services#${id}`} className="link-line hover:text-gold focus:text-gold">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="space-y-3 lg:col-span-2">
-            <h4 className="whitespace-nowrap text-sm font-semibold uppercase tracking-wider text-white/90">Quick Links</h4>
-            <ul className="mt-3 space-y-1 text-sm text-white/80">
-              <li><Link href="/" className="hover:text-gold focus:text-gold">Home</Link></li>
-              <li><Link href="/about" className="hover:text-gold focus:text-gold">About</Link></li>
-              <li><Link href="/services" className="hover:text-gold focus:text-gold">Services</Link></li>
-              <li><Link href="/blog" className="hover:text-gold focus:text-gold">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-gold focus:text-gold">Contact</Link></li>
+          <div className="lg:col-span-2">
+            <h4 className="mono text-paper/45">Quick Links</h4>
+            <ul className="mt-5 space-y-1.5 text-sm text-paper/80">
+              {quickLinks.map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} className="link-line hover:text-gold focus:text-gold">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-charcoal-700 pt-8 text-center text-sm text-white/60">
+      </div>
+
+      <div className="shell mt-20" data-reveal>
+        <h3 className="footer-word type-display select-none text-paper">M & Sons Construction Group LTD</h3>
+      </div>
+
+      <div className="shell">
+        <div className="flex flex-col gap-2 border-t border-paper/10 py-7 text-xs text-paper/50 md:flex-row md:items-center md:justify-between" data-cta-zone>
           <p>&copy; {currentYear} M &amp; Sons Construction Group LTD. All rights reserved.</p>
-          <p className="mt-1 text-xs text-white/50">
+          <p>
             Crafted with ❤️ at{' '}
-            <a
-              href="https://sanganak.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline-offset-4 hover:text-gold hover:underline"
-            >
+            <a href="https://sanganak.com" target="_blank" rel="noopener noreferrer" className="link-line hover:text-gold">
               SanganakHQ
             </a>
             .

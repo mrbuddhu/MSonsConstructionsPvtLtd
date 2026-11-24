@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/blog';
+import { Split } from '@/components/motion/Split';
+import { Parallax } from '@/components/motion/Parallax';
 
 type Params = { slug: string };
 
@@ -17,7 +19,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const title = `${post.title} | M & Sons Construction Group LTD`;
   const description = post.excerpt;
 
-  const url = `https://msonsconstruction.co.uk/blog/${post.slug}`;
+  const url = `https://www.construction-group.co.uk/blog/${post.slug}`;
 
   return {
     title,
@@ -72,41 +74,38 @@ export default function BlogPostPage({ params }: { params: Params }) {
       name: 'M & Sons Construction Group LTD',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://msonsconstruction.co.uk/opengraph-image',
+        url: 'https://www.construction-group.co.uk/icon.png',
       },
     },
   };
 
   return (
     <article>
-      <section className="bg-charcoal-900 pb-10 pt-16 md:pb-16 md:pt-20">
-        <div className="container-narrow">
-          <p className="eyebrow text-gold">Construction advice</p>
-          <h1 className="heading-display mt-2 text-white max-w-3xl">{post.title}</h1>
-          <p className="mt-3 text-sm text-white/70">
+      <section className="grid-dark pb-16 pt-36 text-paper md:pb-24 md:pt-44">
+        <div className="shell">
+          <p className="eyebrow text-gold auto-in" data-reveal="fade">Construction advice</p>
+          <Split as="h1" text={post.title} delay={200} className="auto-in type-display mt-6 max-w-[18ch] text-[clamp(2.6rem,6.4vw,6.5rem)]" />
+          <p className="mono mt-8 text-paper/55 auto-in" data-reveal style={{ ['--d' as string]: '600ms' }}>
             {displayDate} · {post.readingTime}
           </p>
         </div>
       </section>
 
-      <section className="bg-charcoal-900">
-        <div className="container-narrow">
-          <div className="relative -mb-10 aspect-[16/9] overflow-hidden rounded-xl border border-charcoal-800 bg-charcoal-800 md:-mb-16">
-            <Image
-              src={post.heroImage}
-              alt={post.heroAlt}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
+      <section className="bg-gradient-to-b from-ink from-50% to-paper to-50%">
+        <div className="shell">
+          <div className="relative aspect-[16/9] overflow-hidden bg-concrete-800" data-reveal="clip">
+            <div className="absolute inset-0">
+              <Parallax amount={12}>
+                <Image src={post.heroImage} alt={post.heroAlt} fill className="object-cover" sizes="100vw" priority />
+              </Parallax>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-narrow max-w-3xl">
-          <div className="space-y-6 text-base leading-relaxed text-charcoal-700">
+      <section className="section-padding bg-paper">
+        <div className="shell max-w-[52rem]">
+          <div className="prose-site space-y-6 text-lg leading-relaxed text-ink/80">
             <p>
               Choosing the right construction company is one of the most important decisions you will make
               when planning a renovation, extension or full refurbishment in London. The right builder will
@@ -118,7 +117,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               more confident when comparing quotes.
             </p>
 
-            <h2 className="mt-10 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-16 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               1. Check experience with similar projects
             </h2>
             <p className="mt-3">
@@ -127,7 +126,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               refurbishments. Ask to see recent photos or case studies of similar work.
             </p>
 
-            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-14 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               2. Make sure everything is clearly itemised
             </h2>
             <p className="mt-3">
@@ -136,7 +135,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               easier to compare different builders fairly.
             </p>
 
-            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-14 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               3. Look for good communication
             </h2>
             <p className="mt-3">
@@ -145,7 +144,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               of how they will handle your project once work starts.
             </p>
 
-            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-14 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               4. Understand the schedule and payment plan
             </h2>
             <p className="mt-3">
@@ -154,7 +153,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               avoid surprises later on.
             </p>
 
-            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-14 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               5. Choose a team you feel comfortable with
             </h2>
             <p className="mt-3">
@@ -163,7 +162,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
               paper.
             </p>
 
-            <h2 className="mt-8 font-display text-2xl font-semibold text-charcoal-900">
+            <h2 className="heading-sub !mt-14 text-[clamp(1.7rem,3vw,2.4rem)] text-ink">
               Thinking about a project in London?
             </h2>
             <p className="mt-3">
@@ -177,17 +176,17 @@ export default function BlogPostPage({ params }: { params: Params }) {
             </p>
           </div>
 
-          <div className="mt-10 rounded-xl border border-charcoal-200 bg-charcoal-50 p-6 text-sm text-charcoal-700">
-            <h2 className="text-base font-semibold text-charcoal-900">Talk to our team</h2>
+          <div className="mt-16 bg-ink p-7 text-paper/75 md:p-10">
+            <h2 className="heading-sub text-3xl text-paper">Talk to our team</h2>
             <p className="mt-2">
               Call us on{' '}
-              <a href="tel:+447454704949" className="font-semibold text-gold hover:underline">
+              <a href="tel:+447454704949" className="link-line font-semibold text-gold">
                 07454 704949
               </a>{' '}
               or email{' '}
               <a
                 href="mailto:info@construction-group.co.uk"
-                className="font-semibold text-gold hover:underline"
+                className="link-line font-semibold text-gold"
               >
                 info@construction-group.co.uk
               </a>{' '}
@@ -195,7 +194,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             </p>
             <p className="mt-2">
               Or you can send us a message through our{' '}
-              <Link href="/contact" className="font-semibold text-gold hover:underline">
+              <Link href="/contact" className="link-line font-semibold text-gold">
                 Contact page
               </Link>
               .

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from '@/lib/blog';
+import { PageHero } from '@/components/PageHero';
 
 export const metadata: Metadata = {
   title: 'Construction Tips & Advice | M & Sons Blog',
@@ -14,21 +15,15 @@ export default function BlogIndexPage() {
 
   return (
     <article>
-      <section className="bg-charcoal-900 py-20 md:py-28">
-        <div className="container-narrow text-center">
-          <p className="eyebrow">Construction tips &amp; advice</p>
-          <h1 className="heading-display mt-2 text-white">M &amp; Sons Blog</h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-white/90">
-            Simple, down-to-earth advice to help you plan your building and renovation projects with confidence.
-          </p>
-        </div>
-      </section>
+      <PageHero title="M & Sons Blog" eyebrow={<>Construction tips &amp; advice</>}>
+        <p>Simple, down-to-earth advice to help you plan your building and renovation projects with confidence.</p>
+      </PageHero>
 
-      <section className="section-padding bg-white">
-        <div className="container-narrow">
+      <section className="section-padding bg-paper">
+        <div className="shell">
           <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:items-start">
-            <article className="card-premium overflow-hidden">
-              <div className="relative aspect-[16/9] bg-charcoal-100">
+            <article className="group overflow-hidden border border-ink/15 bg-paper-50" data-reveal>
+              <div className="relative aspect-[16/9] overflow-hidden bg-concrete-800">
                 <Image
                   src={firstPost.heroImage}
                   alt={firstPost.heroAlt}
@@ -38,13 +33,13 @@ export default function BlogIndexPage() {
                 />
               </div>
               <div className="p-6 md:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                <p className="mono text-ink/55">
                   Featured guide
                 </p>
-                <h2 className="mt-2 font-display text-2xl md:text-3xl font-semibold text-charcoal-900">
+                <h2 className="heading-sub mt-4 text-[clamp(1.8rem,3.4vw,3rem)] text-ink">
                   {firstPost.title}
                 </h2>
-                <p className="mt-2 text-xs text-charcoal-500">
+                <p className="mono mt-4 text-ink/50">
                   {new Date(firstPost.date).toLocaleDateString('en-GB', {
                     day: '2-digit',
                     month: 'short',
@@ -52,20 +47,20 @@ export default function BlogIndexPage() {
                   })}{' '}
                   · {firstPost.readingTime}
                 </p>
-                <p className="mt-4 text-sm md:text-base text-charcoal-700">
+                <p className="mt-5 text-ink/75 md:text-lg">
                   {firstPost.excerpt}
                 </p>
                 <Link
                   href={`/blog/${firstPost.slug}`}
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-gold hover:text-gold-dark"
+                  className="btn-dark mt-8"
                 >
-                  Read the full guide →
+                  Read the full guide <span className="arrow" aria-hidden>→</span>
                 </Link>
               </div>
             </article>
 
-            <aside className="space-y-4 rounded-xl border border-charcoal-200 bg-charcoal-50 p-6 text-sm text-charcoal-700">
-              <h2 className="text-base font-semibold text-charcoal-900">
+            <aside className="space-y-4 bg-ink p-7 text-sm text-paper/75 md:sticky md:top-28" data-reveal style={{ ['--d' as string]: '150ms' }}>
+              <h2 className="heading-sub text-2xl text-paper">
                 Need help with your project?
               </h2>
               <p>
@@ -74,13 +69,13 @@ export default function BlogIndexPage() {
               </p>
               <p>
                 Call us on{' '}
-                <a href="tel:+447454704949" className="font-semibold text-gold hover:underline">
+                <a href="tel:+447454704949" className="link-line font-semibold text-gold">
                   07454 704949
                 </a>{' '}
                 or email{' '}
                 <a
                   href="mailto:info@construction-group.co.uk"
-                  className="font-semibold text-gold hover:underline"
+                  className="link-line font-semibold text-gold"
                 >
                   info@construction-group.co.uk
                 </a>{' '}
@@ -88,9 +83,10 @@ export default function BlogIndexPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-charcoal-900 px-4 py-2 text-sm font-semibold text-white hover:bg-charcoal-800"
+                className="btn-primary mt-2 w-full justify-between"
+                data-cta-zone
               >
-                Go to Contact page
+                Go to Contact page <span className="arrow" aria-hidden>→</span>
               </Link>
             </aside>
           </div>

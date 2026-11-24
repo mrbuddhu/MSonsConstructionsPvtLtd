@@ -1,27 +1,62 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+
 const PHONE_URL = 'tel:+447454704949';
 const WHATSAPP_URL =
   'https://wa.me/447454704949?text=Hi%20I%20would%20like%20a%20quote%20for%20my%20project';
 
 const floatBtn =
-  'btn-float-3d flex h-14 w-14 items-center justify-center rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2';
+  'flex h-14 w-14 items-center justify-center transition-transform duration-500 ease-out hover:-translate-y-1';
 
+/** Hides itself whenever a block with its own call buttons ([data-cta-zone]) is on screen. */
 export function WhatsAppFloat() {
+  const pathname = usePathname();
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    setHidden(false);
+    const visible = new Set<Element>();
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) visible.add(e.target);
+        else visible.delete(e.target);
+      }
+      setHidden(visible.size > 0);
+    });
+    const t = window.setTimeout(() => {
+      document.querySelectorAll('[data-cta-zone]').forEach((el) => io.observe(el));
+    }, 100);
+    return () => {
+      window.clearTimeout(t);
+      io.disconnect();
+    };
+  }, [pathname]);
+
   return (
-    <div className="fixed bottom-20 right-4 z-40 hidden flex-col gap-3 md:bottom-8 md:flex">
+    <div
+      className={`fixed bottom-8 right-6 z-40 hidden flex-col gap-px transition-[opacity,transform] duration-500 ease-out md:flex ${
+        hidden ? 'pointer-events-none translate-y-4 opacity-0' : 'opacity-100'
+      }`}
+      aria-hidden={hidden}
+    >
       <a
         href={PHONE_URL}
-        className={`${floatBtn} btn-float-3d-gold bg-gold hover:bg-gold-light`}
+        tabIndex={hidden ? -1 : undefined}
+        className={`${floatBtn} bg-ink text-gold ring-1 ring-paper/10`}
         aria-label="Call us for a free quote"
       >
         <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
       </a>
       <a
         href={WHATSAPP_URL}
+        tabIndex={hidden ? -1 : undefined}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${floatBtn} btn-float-3d-whatsapp bg-[#25D366] hover:bg-[#20bd5a]`}
+        className={`${floatBtn} bg-ink text-[#25D366] ring-1 ring-paper/10`}
         aria-label="Chat on WhatsApp for a free quote"
       >
         <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden>

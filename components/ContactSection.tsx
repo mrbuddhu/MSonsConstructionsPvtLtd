@@ -1,7 +1,13 @@
 'use client';
 
 import { useRef, FormEvent } from 'react';
-import { AnimateIn } from './AnimateIn';
+import { Split } from './motion/Split';
+
+const fields = [
+  { id: 'name', label: 'Name', type: 'text', autoComplete: 'name' },
+  { id: 'phone', label: 'Phone', type: 'tel', autoComplete: 'tel' },
+  { id: 'email', label: 'Email', type: 'email', autoComplete: 'email' },
+] as const;
 
 export function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -15,143 +21,104 @@ export function ContactSection() {
     const email = (form.elements.namedItem('email') as HTMLInputElement)?.value || '';
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement)?.value || '';
     const subject = encodeURIComponent(`Enquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`);
     window.location.href = `mailto:info@construction-group.co.uk?subject=${subject}&body=${body}`;
   }
 
   return (
-    <section id="contact" className="section-padding bg-white" aria-labelledby="contact-heading">
-      <div className="container-narrow">
-        <AnimateIn className="text-center">
-          <p className="eyebrow">Free quote</p>
-          <h2 id="contact-heading" className="heading-section mt-2">
-            Get in Touch
-          </h2>
-        </AnimateIn>
-        <AnimateIn delay={60}>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-charcoal-600">
+    <section id="contact" className="section-padding bg-paper" aria-labelledby="contact-heading">
+      <div className="shell">
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow text-ink/70" data-reveal>
+              Free quote
+            </p>
+            <Split id="contact-heading" text="Get in Touch" className="heading-display mt-6" />
+          </div>
+          <p className="lede self-end text-ink/75 lg:col-span-5" data-reveal style={{ ['--d' as string]: '150ms' }}>
             If you are planning a building project or renovation, our team is ready to help. Get in touch today
             for a free quote and professional advice.
           </p>
-        </AnimateIn>
+        </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <AnimateIn variant="right">
-          <div>
-            <div className="rounded-lg border border-charcoal-200 bg-charcoal-50 p-6">
-              <h3 className="font-display text-lg font-semibold text-charcoal-900">
-                M & Sons Construction Group LTD
-              </h3>
-              <address className="mt-4 not-italic text-charcoal-600">
-                <p>86 Bedford Avenue</p>
-                <p>London, UB4 0DS</p>
-                <p className="mt-3">
-                  <strong>Phone:</strong>{' '}
-                  <a href="tel:+447454704949" className="text-gold hover:underline focus:underline">
-                    07454 704949
-                  </a>
-                </p>
-                <p>
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:info@construction-group.co.uk" className="text-gold hover:underline focus:underline">
-                    info@construction-group.co.uk
-                  </a>
-                </p>
+        <div className="mt-16 h-px bg-ink/25" data-reveal="rule" />
+
+        <div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-5" data-reveal>
+            <div className="bg-ink p-7 text-paper md:p-9">
+              <h3 className="heading-sub text-2xl md:text-3xl">M & Sons Construction Group LTD</h3>
+              <address className="mt-8 grid gap-6 not-italic sm:grid-cols-2 lg:grid-cols-1">
+                <div>
+                  <p className="text-paper/85">86 Bedford Avenue</p>
+                  <p className="text-paper/85">London, UB4 0DS</p>
+                </div>
+                <div className="space-y-1">
+                  <p>
+                    <strong className="font-medium text-paper/60">Phone:</strong>{' '}
+                    <a href="tel:+447454704949" className="link-line text-gold">
+                      07454 704949
+                    </a>
+                  </p>
+                  <p>
+                    <strong className="font-medium text-paper/60">Email:</strong>{' '}
+                    <a href="mailto:info@construction-group.co.uk" className="link-line text-gold">
+                      info@construction-group.co.uk
+                    </a>
+                  </p>
+                </div>
               </address>
             </div>
 
-            <div className="mt-6 aspect-video overflow-hidden rounded-lg border border-charcoal-200">
-              <iframe
-                title="Map showing M & Sons Construction location at 86 Bedford Avenue, UB4 0DS"
-                src="https://www.google.com/maps?q=86+Bedford+Avenue,+London+UB4+0DS&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full"
-              />
+            <div className="crop mt-8 text-ink/50">
+              <div className="map-frame aspect-[4/3] overflow-hidden border border-ink/20 bg-paper-200">
+                <iframe
+                  title="Map showing M & Sons Construction location at 86 Bedford Avenue, UB4 0DS"
+                  src="https://www.google.com/maps?q=86+Bedford+Avenue,+London+UB4+0DS&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full"
+                  data-lenis-prevent
+                />
+              </div>
             </div>
           </div>
-          </AnimateIn>
 
-          <AnimateIn delay={100} variant="left">
-          <div>
+          <div className="lg:col-span-6 lg:col-start-7" data-reveal>
             <form
               id="contact-form"
               ref={formRef}
               onSubmit={handleSubmit}
-              className="card-premium p-6"
+              className="border border-ink/15 bg-paper-50 p-7 md:p-10"
               noValidate
             >
-              <div className="space-y-4">
+              <div className="space-y-8">
+                {fields.map((f) => (
+                  <div key={f.id}>
+                    <label htmlFor={f.id} className="mono block text-ink/60">
+                      {f.label} <span className="text-ink/45">*</span>
+                    </label>
+                    <input type={f.type} id={f.id} name={f.id} required autoComplete={f.autoComplete} className="field" />
+                  </div>
+                ))}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-charcoal-900">
-                    Name <span className="text-charcoal-500">*</span>
+                  <label htmlFor="message" className="mono block text-ink/60">
+                    Message <span className="text-ink/45">*</span>
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    autoComplete="name"
-                    className="mt-1 block w-full rounded-md border border-charcoal-300 px-3 py-2 text-charcoal-900 shadow-sm transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-charcoal-900">
-                    Phone <span className="text-charcoal-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    autoComplete="tel"
-                    className="mt-1 block w-full rounded-md border border-charcoal-300 px-3 py-2 text-charcoal-900 shadow-sm transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-charcoal-900">
-                    Email <span className="text-charcoal-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    autoComplete="email"
-                    className="mt-1 block w-full rounded-md border border-charcoal-300 px-3 py-2 text-charcoal-900 shadow-sm transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-charcoal-900">
-                    Message <span className="text-charcoal-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="mt-1 block w-full rounded-md border border-charcoal-300 px-3 py-2 text-charcoal-900 shadow-sm transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
-                  />
+                  <textarea id="message" name="message" rows={4} required className="field resize-none" />
                 </div>
               </div>
-              <p className="mt-3 text-xs text-charcoal-500">
+              <p className="mt-6 text-xs text-ink/55">
                 Submitting will open your email client to send your enquiry. We&apos;ll respond as soon as possible.
               </p>
-              <button
-                type="submit"
-                className="btn-primary mt-4 w-full"
-              >
-                Send Enquiry
+              <button type="submit" className="btn-dark mt-6 w-full justify-between" data-cta-zone>
+                Send Enquiry <span className="arrow" aria-hidden>→</span>
               </button>
             </form>
           </div>
-          </AnimateIn>
         </div>
       </div>
     </section>
