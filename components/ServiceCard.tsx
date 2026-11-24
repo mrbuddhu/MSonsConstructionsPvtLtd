@@ -14,6 +14,7 @@ export function ServiceCard({ service, index, total }: { service: Service; index
             alt={service.title}
             className="object-cover"
             sizes="(max-width: 768px) 92vw, 34vw"
+            loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" aria-hidden />

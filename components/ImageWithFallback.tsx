@@ -12,6 +12,7 @@ type Props = {
   fill?: boolean;
   className?: string;
   sizes?: string;
+  loading?: 'eager' | 'lazy';
 };
 
 export function ImageWithFallback({
@@ -20,6 +21,7 @@ export function ImageWithFallback({
   fill = true,
   className = '',
   sizes,
+  loading,
 }: Props) {
   const [imgSrc, setImgSrc] = useState(src);
 
@@ -30,6 +32,7 @@ export function ImageWithFallback({
       fill={fill}
       className={className}
       sizes={sizes}
+      loading={loading}
       onError={() => setImgSrc(FALLBACK)}
     />
   );

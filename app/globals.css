@@ -569,11 +569,6 @@ html.lenis body {
   }
 }
 
-.marquee-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--gold);
-}
-
 /* Services rail */
 .rail-track {
   display: grid;
