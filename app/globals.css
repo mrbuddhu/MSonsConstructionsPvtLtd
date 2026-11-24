@@ -309,20 +309,26 @@ html.lenis body {
   transform: none;
 }
 
-/* Clip reveal for media: a shutter opening upward. The observed wrapper is
-   never clipped itself (a fully clipped target never reports intersecting);
-   the clip lives on its first child. */
+/* Shutter reveal for media. A solid panel lifts off the photo; the photo
+   itself is never clipped, so the browser's lazy loading sees it and fetches
+   it on time (a clipped image can be skipped by lazy loading). */
 .motion [data-reveal='clip'] {
   opacity: 1;
   transform: none;
 }
-.motion [data-reveal='clip'] > * {
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 1.2s var(--ease-inout);
+.motion [data-reveal='clip']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #21211f;
+  transform-origin: 50% 0;
+  transition: transform 1.2s var(--ease-inout);
   transition-delay: var(--d, 0ms);
+  pointer-events: none;
 }
-.motion [data-reveal='clip'].is-in > * {
-  clip-path: inset(0 0 0 0);
+.motion [data-reveal='clip'].is-in::after {
+  transform: scaleY(0);
 }
 
 /* Word-by-word masked rise for headings */
