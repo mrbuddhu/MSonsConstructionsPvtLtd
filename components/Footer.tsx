@@ -89,7 +89,7 @@ export function Footer() {
       </div>
 
       <div className="shell">
-        <div className="flex flex-col gap-2 border-t border-paper/10 py-7 text-xs text-paper/50 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-2 border-t border-paper/10 py-7 text-xs text-paper/50 md:flex-row md:items-center md:justify-between md:pr-24">
           <p>&copy; {currentYear} M &amp; Sons Construction Group LTD. All rights reserved.</p>
           <p>
             Crafted with ❤️ at{' '}
