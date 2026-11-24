@@ -208,7 +208,7 @@ export function createBuildScene(canvas: HTMLCanvasElement, opts: { mobile: bool
   // ---- Tower crane (the logo has one; so does every site) ---------------
   const craneMat = new MeshStandardMaterial({ color: GOLD, metalness: 0.35, roughness: 0.55 });
   const crane = new Group();
-  const mastH = FLOORS * FH + 3.2;
+  const mastH = FLOORS * FH + 1.4;
   const mast = new Mesh(new BoxGeometry(0.5, mastH, 0.5), craneMat);
   mast.position.y = mastH / 2 - 0.3;
   crane.add(mast);
