@@ -156,7 +156,7 @@ export function Hero() {
         </div>
 
         {/* Copy */}
-        <div className="shell relative z-10 flex h-full flex-col justify-end pb-[max(2.5rem,7vh)] pt-28">
+        <div className="shell relative z-10 flex h-full flex-col justify-end pb-[calc(3.75rem+max(1.75rem,4vh))] pt-24 md:pb-[max(2.5rem,7vh)] md:pt-28">
           <p className="eyebrow text-gold auto-in" data-reveal="fade" style={{ ['--d' as string]: '500ms' }}>
             London &amp; surrounding areas
           </p>
@@ -175,7 +175,7 @@ export function Hero() {
             >
               High-quality building services for residential and commercial projects.
             </p>
-            <div className="flex flex-wrap gap-3 auto-in" data-reveal style={{ ['--d' as string]: '1350ms' }}>
+            <div className="flex flex-wrap gap-3 auto-in" data-cta-zone data-reveal style={{ ['--d' as string]: '1350ms' }}>
               <Link href="/#contact" className="btn-primary">
                 Get Free Quote <span className="arrow" aria-hidden>→</span>
               </Link>

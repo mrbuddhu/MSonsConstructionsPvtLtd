@@ -39,7 +39,7 @@ export function ServicesSection() {
       </ServicesRail>
 
       <div className="shell pb-[clamp(5rem,10vw,8rem)]">
-        <div className="flex justify-start border-t border-paper/15 pt-10 md:justify-end" data-reveal>
+        <div className="flex justify-start border-t border-paper/15 pt-10 md:justify-end" data-cta-zone data-reveal>
           <Link href="/services" className="btn-primary">
             View All Services <span className="arrow" aria-hidden>→</span>
           </Link>

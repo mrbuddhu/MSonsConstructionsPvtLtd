@@ -83,7 +83,7 @@ export default function ServicesPage() {
               Contact us to discuss your project. We serve London and surrounding areas.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end" data-reveal>
+          <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end" data-cta-zone data-reveal>
             <Link href="/contact" className="btn-primary">
               Contact Us <span className="arrow" aria-hidden>→</span>
             </Link>

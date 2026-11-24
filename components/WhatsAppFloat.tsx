@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+
 const PHONE_URL = 'tel:+447454704949';
 const WHATSAPP_URL =
   'https://wa.me/447454704949?text=Hi%20I%20would%20like%20a%20quote%20for%20my%20project';
@@ -5,11 +10,40 @@ const WHATSAPP_URL =
 const floatBtn =
   'flex h-14 w-14 items-center justify-center transition-transform duration-500 ease-out hover:-translate-y-1';
 
+/** Hides itself whenever a block with its own call buttons ([data-cta-zone]) is on screen. */
 export function WhatsAppFloat() {
+  const pathname = usePathname();
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    setHidden(false);
+    const visible = new Set<Element>();
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) visible.add(e.target);
+        else visible.delete(e.target);
+      }
+      setHidden(visible.size > 0);
+    });
+    const t = window.setTimeout(() => {
+      document.querySelectorAll('[data-cta-zone]').forEach((el) => io.observe(el));
+    }, 100);
+    return () => {
+      window.clearTimeout(t);
+      io.disconnect();
+    };
+  }, [pathname]);
+
   return (
-    <div className="fixed bottom-8 right-6 z-40 hidden flex-col gap-px md:flex">
+    <div
+      className={`fixed bottom-8 right-6 z-40 hidden flex-col gap-px transition-[opacity,transform] duration-500 ease-out md:flex ${
+        hidden ? 'pointer-events-none translate-y-4 opacity-0' : 'opacity-100'
+      }`}
+      aria-hidden={hidden}
+    >
       <a
         href={PHONE_URL}
+        tabIndex={hidden ? -1 : undefined}
         className={`${floatBtn} bg-ink text-gold ring-1 ring-paper/10`}
         aria-label="Call us for a free quote"
       >
@@ -19,6 +53,7 @@ export function WhatsAppFloat() {
       </a>
       <a
         href={WHATSAPP_URL}
+        tabIndex={hidden ? -1 : undefined}
         target="_blank"
         rel="noopener noreferrer"
         className={`${floatBtn} bg-ink text-[#25D366] ring-1 ring-paper/10`}

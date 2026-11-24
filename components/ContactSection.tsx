@@ -114,7 +114,7 @@ export function ContactSection() {
               <p className="mt-6 text-xs text-ink/55">
                 Submitting will open your email client to send your enquiry. We&apos;ll respond as soon as possible.
               </p>
-              <button type="submit" className="btn-dark mt-6 w-full justify-between">
+              <button type="submit" className="btn-dark mt-6 w-full justify-between" data-cta-zone>
                 Send Enquiry <span className="arrow" aria-hidden>→</span>
               </button>
             </form>

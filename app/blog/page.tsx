@@ -84,6 +84,7 @@ export default function BlogIndexPage() {
               <Link
                 href="/contact"
                 className="btn-primary mt-2 w-full justify-between"
+                data-cta-zone
               >
                 Go to Contact page <span className="arrow" aria-hidden>→</span>
               </Link>
